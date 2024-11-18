@@ -271,6 +271,13 @@ expenses <- expenses %>% group_by(ORG_EIN, TAX_YEAR) %>%
 balance <- balance %>% group_by(ORG_EIN, TAX_YEAR) %>%
   filter(row_number()==1)
 
+#Saving environment space by removing the other dfs
+remove(summary2009, summary2010, summary2011, summary2012, summary2013, summary2014, 
+     summary2015, summary2016, summary2017, summary2018, summary2019 )
+remove(expenses2009, expenses2010, expenses2011, expenses2012, expenses2013, expenses2014, 
+     expenses2015, expenses2016, expenses2017, expenses2018, expenses2019 )
+remove(balance2009, balance2010, balance2011, balance2012, balance2013, balance2014, 
+     balance2015, balance2016, balance2017, balance2018, balance2019 )
 #Let's join everything together
 
 
@@ -284,6 +291,8 @@ df_long_fncl <- df_long_fncl %>% left_join(balance, by = c("TAXYR" = "TAX_YEAR",
                                                                    "EIN" = "ORG_EIN"))
 
 
+
+
 ```
 
 
@@ -294,6 +303,7 @@ Now we're ready for some analyses! We are most interested in understanding trans
 
 
 ```{r}
+
 
 
 #First need to denote transitions 
@@ -350,8 +360,7 @@ temp
 
 ```
 
-
-
+There are 349 transitions from male to male (MM) transitions, 253 male to female transitions (MF), 160 female to male transitions (FM), and 305 female to female transitions (FF) in our dataset. FF orgs have the smallest number of employees, on average while MF have the highest. It should be noted that the standard deviation for number of employees is pretty high, suggesting a wide range of nonprofits. MM nonprofits have the highest total expeness on average and the highest total assets. Again, the SDs are wide, suggesting large variation across observations. 
 
 
 #### Financial Measures by Transitions
@@ -452,6 +461,12 @@ ggplot() +
 ```
 
 
-
+The glass cliff phenomenon suggest that financial precarious NPs (seen by a significant drop in their financials between T-2 and T-1) would more likely hire a female to the CEO position. We start by looking at the DAR variable. MM and MF organizations follow very similar trajectories. Interesting, FM transitions display the trajectory we would expect for a glass cliff. The PER metric tells a different story (as differing financial metrics tend to do). We do not observe any big change in PER for any for the groups before a transition. Interesting, the MM group experiences significant PER increases after the new transitions. 
+\
+\
+As a final understanding of the data, we look at the distribution of the financial variables at T-1. We consider the two most relevant groups of MM and MF. We see that the distribution of financial variables tends to be extremely similar to both types of transitions, failing to provide strong evidence for a glass cliff phenonemon.
+\ 
+\
+The work in this paper presents some of the first attempts to investigate the glass cliff phenomenon. Although no conclusive evidence was found, the larger importance of this piece was to show access to 990 data through the data commons and encourage further exploration on your own. Happy data-ing!
 
 
