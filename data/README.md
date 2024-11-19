@@ -20,12 +20,36 @@ We will use the following tables:
 
 - F9-P00-T00-HEADER
 - F9-P01-T00-SUMMARY
+- F9-P08-T00-REVENUE
+- F9-P09-T00-EXPENSES
+- F9-P10-T00-BALANCE-SHEET
 - partvii/PARTVII
 
 ```r
-root <- "https://nccs-efile.s3.us-east-1.amazonaws.com/parsed/"
-fn   <- "F9-P00-T00-HEADER-2020.csv"
-d <- read.csv( paste0( root, fn ) )
+EIN2_10 <- 
+c("EIN-02-0240383", "EIN-03-0179298", "EIN-04-2104310", "EIN-04-2259692", 
+"EIN-04-2592472", "EIN-04-2596491", "EIN-04-3266589", "EIN-04-3543134", 
+"EIN-05-0258941", "EIN-06-0840436")
+
+tables <- 
+c( "F9-P00-T00-HEADER",
+"F9-P01-T00-SUMMARY",
+"F9-P08-T00-REVENUE",
+"F9-P09-T00-EXPENSES",
+"F9-P10-T00-BALANCE-SHEET")
+
+for( i in tables )
+{
+  for( j in 2009:2020 )
+  { 
+    df <- NULL
+    try( df <- get_table( i, j ) )
+    if( is.null(df) ){ next }
+    sub <- dplyr::filter( df$EIN2 %in% EIN2_10 )
+    fn <- paste0( i, "-", j, "-SAMPLE-10.CSV" )
+    write.csv( sub, fn, row.names=F, na="" )
+  }
+}
 ```
 
 
