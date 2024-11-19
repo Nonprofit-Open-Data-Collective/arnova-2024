@@ -62,6 +62,31 @@ for( i in tables )
     write.csv( sub, fn, row.names=F, na="" )
   }
 }
+
+# COMBINE ALL YEARS TO SINGLE FILE
+
+root <- "https://raw.githubusercontent.com/Nonprofit-Open-Data-Collective/arnova-2024/refs/heads/main/data/"
+
+for( i in tables )
+{
+  d.list <- list()
+  for( j in 2009:2020 )
+  {
+    fn <- paste0( i, "-", j, "-SAMPLE-10.CSV" )
+    url <- paste0( root, fn )
+    df <- read.csv( url, colClasses = "character" ) 
+    d.list[[ as.character(j) ]] <- df
+  }
+  dd <- dplyr::bind_rows( d.list )
+  filename <- paste0( i, "-SAMPLE-10.CSV" )
+  write.csv( dd,  filename, row.names=F, na="" )
+}
+
+# [1] "F9-P00-T00-HEADER-SAMPLE-10.CSV"       
+# [2] "F9-P01-T00-SUMMARY-SAMPLE-10.CSV"      
+# [3] "F9-P08-T00-REVENUE-SAMPLE-10.CSV"      
+# [4] "F9-P09-T00-EXPENSES-SAMPLE-10.CSV"     
+# [5] "F9-P10-T00-BALANCE-SHEET-SAMPLE-10.CSV"
 ```
 
 
