@@ -9,6 +9,18 @@ This folder contains the following files:
 EIN <- c(  "20240383", "30179298", "42104310",
            "42259692", "42592472", "42596491",
            "43266589", "43543134", "50258941", "60840436"  )
+
+# EIN2 FORMAT
+EIN2_10 <- c( "EIN-02-0240383", "EIN-03-0179298", "EIN-05-0258941",
+              "EIN-04-2104310", "EIN-04-2259692", "EIN-06-0840436",
+              "EIN-04-2592472", "EIN-04-2596491", "EIN-04-3266589",
+              "EIN-04-3543134" )
+```
+
+#### Helper Functions
+
+```r
+source( "https://raw.githubusercontent.com/Nonprofit-Open-Data-Collective/arnova-2024/refs/heads/main/data/fx.R" )
 ```
 
 #### Efile Datasets
