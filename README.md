@@ -1,24 +1,31 @@
-# arnova-2024
+# The Evolving Nonprofit Sector Data Infrastructure
 
-Demo scripts for data workshop at ARNOVA Conference 2024
 
-<a href="glass-cliff-workflow.html" class="btnStack">Workflow Walkthrough</a>
+Demo scripts for the data workshop at ARNOVA Conference 2024:
+
+<a href="glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
 
 
 ---
 
 
-### Packages
+### Nonprofit Data Packages
 
 ```r
 devtools::install_github( "Nonprofit-Open-Data-Collective/peopleparser" )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
-# options( download.file.method = "wininet" )    # for windows
-# options( download.file.method = "libcurl" )    # for all op systems
-# devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
+devtools::install_github( 'nonprofit-open-data-collective/fiscal')
+devtools::install_github( 'nonprofit-open-data-collective/irs990efile')
 ```
 
-### Demo Script
+If you are having problems downloading packages try: 
+
+```
+# options( download.file.method = "wininet" )    # for windows
+# options( download.file.method = "libcurl" )    # for all op systems
+```
+
+### Demo Scripts
 
 ```r
 library( dplyr )
@@ -58,15 +65,15 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 <style>
   .btnStack {
-  background-color: orange;
+  background-color: steelblue;
   color: #000;
   text-decoration: none;
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
-  line-height: 1.428571429;
+  line-height: 1.8;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
