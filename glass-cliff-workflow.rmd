@@ -82,12 +82,14 @@ We will be using the following NODC packages for the demo:
 devtools::install_github( 'Nonprofit-Open-Data-Collective/peopleparser' )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
 devtools::install_github( 'nonprofit-open-data-collective/fiscal')
+devtools::install_github( 'nonprofit-open-data-collective/irs990efile')
 ```
 
 
 ```{r packages}
 library( tidyverse )
 library( pander )
+library( data.table )
 
 # nonprofit data packages 
 library( peopleparser )
@@ -155,7 +157,6 @@ Typically you would not need to replicate this step since it is a computationall
 ## Step 2: Parse DTK Names 
 
 ![](workflow.png)
-
 
 
 ```{r, message = F}
@@ -318,10 +319,10 @@ c( "dtk.name", "title.standard",
    "tot.comp", "pay.max", "pay.rank" ) 
 
 these <- titles$taxyr == 2019 & titles$ein == "60840436"
-titles[ these, keep3 ]  %>% pander::pander()
+# titles[ these, keep3 ]  %>% pander::pander()
 
 these <- titles$taxyr == 2018 & titles$ein == "60840436"
-titles[ these, keep3 ]  %>% pander::pander()
+# titles[ these, keep3 ]  %>% pander::pander()
 
 these <- titles$taxyr == 2017 & titles$ein == "60840436"
 titles[ these, keep3 ]  %>% pander::pander()
@@ -345,7 +346,82 @@ write.csv( partvii, "data/PART-VII-SAMPLE-10-PARSED-NAMES-TITLES.CSV", row.names
 
 ## Step 4: Identify CEO Transitions
 
-We are omitting this step to avoid an overly complex example. 
+We are omitting this step because it is outside the scope of the workflow. All that you need to know is leadership transitions are identified by isolating CEOs and finding periods where the individuals change. Transitions are labeled as:
+
+- MM: outgoing male ceo, incoming male ceo
+- MF: outgoing male ceo, incoming female ceo
+- FM: outgoing female ceo, incoming male ceo
+- FF: outgoing female ceo, incoming female ceo 
+
+
+```{r, echo=F}
+root    <- paste0( nodc, repo )
+fn      <- "data/toy_CEO_trans_1000EIN_fncl.csv"
+url     <- paste0( root, fn )
+ceo_trans_1000_fncl      <- read.csv( url )
+
+#This df 
+# ceo_trans_1000_fncl <- read.csv("toy_CEO_trans_1000EIN_fncl.csv")
+
+#First need to denote transitions 
+ceo_trans_1000_fncl <- ceo_trans_1000_fncl %>%
+  arrange(EIN, transition_no, TAXYR)%>% #for each org, transition, and year, 
+  group_by(EIN, transition_no) %>%       
+  mutate(period = row_number())%>%       #let's denote which period the row is relative to (i.e., how many years before /after a transition)
+  ungroup()
+
+#Let's make this variable a bit more readable
+ceo_trans_1000_fncl$period <- paste0("T", ceo_trans_1000_fncl$period-3)
+ceo_trans_1000_fncl$period <- factor(ceo_trans_1000_fncl$period, levels = c("T-2", "T-1", "T0" , "T1", "T2"))
+
+
+#Need to get transition type too
+#We want to know if the transition is M>M, M>F, F>M, or F>M
+#We will first create a string of the CEO gender throughout the 5 year period
+#The we will create a column that keeps the first and last gender (this is the gender transition)
+ceo_trans_1000_fncl<- ceo_trans_1000_fncl %>%
+  group_by(EIN, transition_no)%>%
+  mutate(trans_tot = str_c(unlist(strsplit(paste(gender, collapse = ""), "")), collapse = "")
+  ) %>%
+  mutate(
+    trans_type = str_sub(trans_tot, 1, 1) %>%
+      str_c(str_sub(trans_tot, nchar(trans_tot), nchar(trans_tot)))  # Combine 1st and last letter
+    
+  )
+
+#We want this variable to be a factor
+ceo_trans_1000_fncl$trans_type <- as.factor(ceo_trans_1000_fncl$trans_type)
+
+
+keep <-
+  c("EIN","TAXYR","period", "CEO1", "CEO2",  "trans_type")
+
+ceo_trans_1000_fncl[ 1:40, keep ] %>% pander::pander()
+```
+
+
+```{r, eval=F, echo=F}
+#We're going to get firm attributes by transition type
+#Let's consider the attributes at t-1
+#We'll consider basic variables like number of employees, total assets, etc.
+
+#Note that further data cleaning is necessary for final presentation due to NA values input into some of these columns. For now, we will just remove the nas and continue with our analysis
+
+temp <- ceo_trans_1000_fncl %>% group_by(trans_type)%>%
+  filter(period == "T-1") %>%
+  summarize(count = n(),
+    num_emp_av =mean(F9_01_ACT_GVRN_EMPL_TOT, na.rm = T),
+            num_emp_sd = sd(F9_01_ACT_GVRN_EMPL_TOT, na.rm = T),
+            num_vol_av = mean(F9_01_ACT_GVRN_VOL_TOT, na.rm = T),
+            num_vol_sd = sd(F9_01_ACT_GVRN_VOL_TOT, na.rm = T),
+            total_exp_av = mean(F9_01_EXP_TOT_PY, na.rm = T),
+            total_exp_sd = sd(F9_01_EXP_TOT_PY, na.rm = T),
+            total_assets_av = mean(F9_01_NAFB_ASSET_TOT_BOY, na.rm = T),
+            total_assets_sd = sd(F9_01_NAFB_ASSET_TOT_BOY, na.rm = T))
+
+temp
+```
+
 
 
 
@@ -506,10 +582,32 @@ write.csv( df, "data/FINANCIALS-W-RATIOS-PLUS-BMF.CSV", row.names=F )
 
 
 
+Add this step? Or just add a few sentences explaining it.
+
+
+
+## Glass Cliff Examples
+
+Add your examples here....
+
+
+![](example.png)
+
+
+
+
+
+
+
+
+
+<br>
+<br>
 <br>
 <hr>
 <br>
-
+<br>
+<br>
 
 
 ## Appendix 
