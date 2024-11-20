@@ -23,12 +23,12 @@ get_partvii <- function( year ){
 
 
 get_bmf <- function( inactive=TRUE ){
-  url <- https://nccsdata.s3.us-east-1.amazonaws.com/harmonized/bmf/unified/BMF_UNIFIED_ACTIVE_ORGS_V1.1.csv
+  url <- "https://nccsdata.s3.us-east-1.amazonaws.com/harmonized/bmf/unified/BMF_UNIFIED_ACTIVE_ORGS_V1.1.csv"
   bmf <- data.table::fread( url )
   
   if( inactive ){
-    url2 <- https://nccsdata.s3.us-east-1.amazonaws.com/harmonized/bmf/unified/BMF_UNIFIED_INACTIVE_ORGS_V1.1.csv
-    bmf2 <- data.table::fread( url )
+    url2 <- "https://nccsdata.s3.us-east-1.amazonaws.com/harmonized/bmf/unified/BMF_UNIFIED_INACTIVE_ORGS_V1.1.csv"
+    bmf2 <- data.table::fread( url2 )
     bmf <- dplyr::bind_rows( bmf, bmf2 ) }
     
   return( bmf )
