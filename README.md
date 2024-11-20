@@ -2,16 +2,10 @@
 
 Demo scripts for data workshop at ARNOVA Conference 2024
 
+<a href="glass-cliff-workflow.html" class="btnStack">Workflow Walkthrough</a>
+
+
 ---
-
-[WORKFLOW DEMO](glass-cliff-workflow.html)
-
----
-
-
-### For the URL to this repo: 
-
-![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
 
 
 ### Packages
@@ -46,7 +40,47 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 ```
 
 
-## For the NCCS data catalog: 
+### This repo: 
+
+![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
+
+
+
+
+## NCCS data catalog: 
 
 ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9)
 
+
+
+
+
+
+<style>
+  .btnStack {
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+a.btnStack:hover {
+  background-color: #000;
+  color: #fff;
+}
+</style>
