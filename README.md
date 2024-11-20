@@ -3,7 +3,7 @@
 
 Demo scripts for the data workshop at ARNOVA Conference 2024:
 
-<a href="glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
+<a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
 
 
 ---
