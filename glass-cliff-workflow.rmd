@@ -67,18 +67,20 @@ Here we explore the question of whether female CEOs are more likely to be hired 
 
 ### Efile Data
 
-Processed IRS 990 Efile data are housed in the [data catalog](https://nccs.urban.org/nccs/catalogs/catalog-efile.html) with the respective [data dictionaries ](https://nonprofit-open-data-collective.github.io/irs990efile/data-dictionary/data-dictionary.html). You can find further information about sources, processing, and final parsing on these sites . 
+Processed IRS 990 Efile data are housed in the [NCCS Data Catalog](https://nccs.urban.org/nccs/catalogs). You can find further information about sources, processing, and variable descriptions here: 
 
+- [Efile Data Catalog](https://nccs.urban.org/nccs/catalogs/catalog-efile.html)
+- [Efile Data Dictionary](https://nonprofit-open-data-collective.github.io/irs990efile/data-dictionary/data-dictionary.html)
 
 
 ### R Packages
 
-- [Efile Data Catalog](https://nccs.urban.org/nccs/catalogs/catalog-efile.html)
-- [Efile Data Dictionary](https://nonprofit-open-data-collective.github.io/irs990efile/data-dictionary/data-dictionary.html)
+There is a growing library of nonprofit tools: 
+
 - [Open Data Collective Landing Page](https://nonprofit-open-data-collective.github.io/tools/)
 
 
-We will be using the following NODC packages for the demo: 
+We will be using the following packages for the demo: 
 
 ```{r, eval=F}
 devtools::install_github( 'Nonprofit-Open-Data-Collective/peopleparser' )
