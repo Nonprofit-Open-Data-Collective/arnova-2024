@@ -1,7 +1,9 @@
 ---
-title: "Glass Cliff Example"
-author: "Tiana Marrese"
-date: "2024-11-19"
+title: "Nonprofit CEO Transition Dynamics"
+author: 
+  - Tiana Marrese, UPenn
+  - Jesse Lecy, ASU
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
     theme: readable
@@ -1004,6 +1006,11 @@ h2 { font-size: 2em;
 
 img { margin-top: 40px;
       margin-bottom: 50px;}
+      
+#TOC {
+   margin-top: 60px;
+   font-size: 0.9em;
+}
 
 a { color:#AF7817; } 
 
