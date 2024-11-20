@@ -119,7 +119,7 @@ library( utils )
 
 
 
-## Step 1: Building Efile Tables from Scratch
+## STEP 1: Building Efile Tables from Scratch
 
 ![](workflow.png)
 
@@ -156,7 +156,7 @@ Typically you would not need to replicate this step since it is a computationall
 
 
 
-## Step 2: Parse DTK Names 
+## STEP 2: Parse DTK Names 
 
 ![](workflow.png)
 
@@ -266,7 +266,7 @@ write.csv( partvii, "data/PART-VII-SAMPLE-10-PARSED-NAMES.CSV", row.names=F )
 ```
 
 
-## Step 3: Standardize Titles 
+## STEP 3: Standardize Titles 
 
 ![](workflow.png)
 
@@ -346,7 +346,7 @@ write.csv( partvii, "data/PART-VII-SAMPLE-10-PARSED-NAMES-TITLES.CSV", row.names
 
 
 
-## Step 4: Identify CEO Transitions
+## STEP 4: Identify CEO Transitions
 
 We are omitting this step because it is outside the scope of the workflow. All that you need to know is leadership transitions are identified by isolating CEOs and finding periods where the individuals change. Transitions are labeled as:
 
@@ -428,7 +428,7 @@ temp
 
 
 
-## Step 5: Compile Financials
+## STEP 5: Compile Financials
 
 ![](workflow.png)
 
@@ -488,7 +488,7 @@ See the appendix for the code used to compile the five tables above for the samp
 
 
 
-## Step 6: Add Financial Operating Ratios 
+## STEP 6: Add Financial Operating Ratios 
 
 ![](workflow.png)
 
@@ -549,7 +549,7 @@ write.csv( df, "data/FINANCIALS-W-RATIOS.CSV", row.names=F )
 
 
 
-## Step 7: Add BMF Fields 
+## STEP 7: Add BMF Fields 
 
 ![](workflow.png)
 The Business Master File contains important information not available on 990 forms such as organizational NTEE codes. In addition, the NCCS BMF files contain standardized geographies and other useful information. 
@@ -580,7 +580,7 @@ write.csv( df, "data/FINANCIALS-W-RATIOS-PLUS-BMF.CSV", row.names=F )
 
 
 
-## Step 8: Combine CEO Panel and Financials
+## STEP 8: Combine CEO Panel and Financials
 
 
 
