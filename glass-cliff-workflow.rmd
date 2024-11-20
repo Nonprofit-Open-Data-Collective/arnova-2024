@@ -125,10 +125,10 @@ library( utils )
 
 This step builds Efile tables by loading raw XML efile returns from the Data Commons and using the **irs990efile** package to parse XML files into rectangular CSV tables. 
 
+This code creates data for a sample of 100 nonprofits from 2018:
+
 ```{r, eval=F}
-# Create sample of 100 
-# organizations from 2018
-# library( irs990efile )
+library( irs990efile )
 
 index <- build_index( tax.years=2018 )
 
@@ -148,7 +148,9 @@ URLS <- index100$URL
 build_tables( urls=URLS, year=2018, table.names=TABLES  )
 ```
 
-Typically you would not need to replicate this step since it is a computationally-intensive process. It can take a couple of days to build the full efile database. It is much easier to pull existing CSV files from NCCS: [**EFILE DATA CATALOG**](https://nccs.urban.org/nccs/catalogs/catalog-efile.html).
+Typically you would not need to replicate this step since it is a computationally-intensive process. It can take a couple of days to build the full efile database. It is much easier to pull existing CSV files from NCCS: 
+
+[**EFILE DATA CATALOG**](https://nccs.urban.org/nccs/catalogs/catalog-efile.html).
 
 
 
@@ -995,9 +997,10 @@ h1 { color: #25383C; margin-top: 60px; }
 
 h3, h4, strong { color: #6D7B8D; }
 
-h2 { margin-bottom: 40px;
-     color: #25383C; 
-     margin-top: 120px;}
+h2 { font-size: 2em;
+     margin-bottom: 40px;
+     color: #726e6e; 
+     margin-top: 140px;}
 
 img { margin-top: 40px;
       margin-bottom: 50px;}
