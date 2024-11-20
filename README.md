@@ -2,6 +2,18 @@
 
 Demo scripts for data workshop at ARNOVA Conference 2024
 
+---
+
+[WORKFLOW DEMO](glass-cliff-workflow.html)
+
+---
+
+
+### For the URL to this repo: 
+
+![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
+
+
 ### Packages
 
 ```r
@@ -33,9 +45,6 @@ df <- merge( hd.2016, p1.2016, by="URL", all=TRUE )
 df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 ```
 
-## For the URL to this repo: 
-
-![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
 
 ## For the NCCS data catalog: 
 
