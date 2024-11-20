@@ -28,7 +28,7 @@ get_bmf <- function( inactive=TRUE ){
   
   if( inactive ){
     url2 <- "https://nccsdata.s3.us-east-1.amazonaws.com/harmonized/bmf/unified/BMF_UNIFIED_INACTIVE_ORGS_V1.1.csv"
-    bmf2 <- data.table::fread( url )
+    bmf2 <- data.table::fread( url2 )
     bmf <- dplyr::bind_rows( bmf, bmf2 ) }
     
   return( bmf )
