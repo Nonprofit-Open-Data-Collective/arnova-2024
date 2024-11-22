@@ -5,15 +5,17 @@
 
 A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
+![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
+
+<hr>
+
 <a href="https://github.com/Nonprofit-Open-Data-Collective/arnova-2024/blob/main/NCCS-DATA-CATALOG.pdf" target="_blank" class="btnStack"><b>SLIDES</b></a>
 
+<br>
 
-<br>
-<br>
 
 
 ## Nonprofit Data Packages
-
 
 Packages used in the demo script: 
 
@@ -32,16 +34,9 @@ If you are having problems downloading packages try:
 # options( download.file.method = "libcurl" )    # for all op systems
 ```
 
-[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/) • [Nonprofit Open Data Collective on GitHub](https://github.com/Nonprofit-Open-Data-Collective)  
 
-[Nonprofit Open Data Collective on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
-
-<br>
-<br>
-
-## R Packages
-
-We use the following packages in the demo script: 
+We also use the following R packages in the demo script: 
 
 ```r
 package.list <- 
@@ -99,21 +94,11 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <br>
 <br>
 
-## This repo: 
-
-![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
-
-
-<br>
-<br>
-<br>
-<br>
-
 ## NCCS data catalog: 
 
 [ ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9) ](https://nccs.urban.org/nccs/datasets/)
 
-
+The Nonprofit Sector in Brief Dashboard aggregates more than three decades of NCCS data to illuminate trends in the nonprofit sector. The dashboard currently provides data up to 2021 and will be continuously updated with the most recent available data. View data and trends by organization type, subsector, asset size, geography, and time period to see a snapshot of the nonprofit sector as seen through IRS data.
 
 
 
