@@ -1,5 +1,7 @@
-# The Evolving Nonprofit Sector Data Infrastructure
+<br>
+<br>
 
+# The Evolving Nonprofit Sector Data Infrastructure
 
 A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
@@ -115,7 +117,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <style>
 
 .btnStack {
-  background-color: #7393B3;
+  background-color:  #fdbf11;
   color: #000;
   text-decoration: none;
   display: inline-block;
