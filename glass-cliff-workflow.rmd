@@ -490,19 +490,28 @@ fn      <- "data/toy_CEO_trans_1000EIN_fncl.csv"
 url     <- paste0( root, fn )
 ceo_trans_1000_fncl     <- read.csv( url )
 
-#This df 
-# ceo_trans_1000_fncl<- read.csv("toy_CEO_trans_1000EIN_fncl.csv")
+# ceo_trans_1000_fncl <- 
+#   read.csv( "data/toy_CEO_trans_1000EIN_fncl.csv" )
 
-#First need to denote transitions 
-ceo_trans_1000_fncl<- ceo_trans_1000_fncl%>%
-  arrange(EIN, transition_no, TAXYR)%>% #for each org, transition, and year, 
-  group_by(EIN, transition_no) %>%       
-  mutate(period = row_number())%>%       #let's denote which period the row is relative to (i.e., how many years before /after a transition)
+# let's denote which period the row 
+# is relative to (i.e., how many years 
+# before /after a transition)
+
+# First need to denote transitions
+# for each org, transition, and year 
+
+ceo_trans_1000_fncl<- ceo_trans_1000_fncl %>%
+  arrange( EIN, transition_no, TAXYR ) %>%  
+  group_by( EIN, transition_no ) %>%       
+  mutate( period = row_number() ) %>%       
   ungroup()
 
 #Let's make this variable a bit more readable
-ceo_trans_1000_fncl$period <- paste0("T", ceo_trans_1000_fncl$period-3)
-ceo_trans_1000_fncl$period <- factor(ceo_trans_1000_fncl$period, levels = c("T-2", "T-1", "T0" , "T1", "T2"))
+ceo_trans_1000_fncl$period <- 
+   paste0( "T", ceo_trans_1000_fncl$period-3 )
+ceo_trans_1000_fncl$period <- 
+  factor( ceo_trans_1000_fncl$period, 
+          levels = c("T-2", "T-1", "T0" , "T1", "T2") )
 
 
 # Need to get transition type too:
@@ -529,7 +538,8 @@ ceo_trans_1000_fncl_wT <-
 ceo_trans_1000_fncl_wT$trans_type <- 
   as.factor(ceo_trans_1000_fncl_wT$trans_type)
 
-write.csv( ceo_trans_1000_fncl_wT, "toy_ceo_trans_1000EIN_fncl_wT.csv" )
+write.csv( ceo_trans_1000_fncl_wT, 
+           "data/toy_ceo_trans_1000EIN_fncl_wT.csv" )
 ```
 
 
@@ -675,7 +685,7 @@ Now we're ready for some analyses! The Glass Cliff Phenomenon hypothesizes that 
 
 ```{r}
 
-ceo_trans_1000EIN_fncl_wT <- read.csv("toy_ceo_trans_1000EIN_fncl_wT.csv")
+ceo_trans_1000EIN_fncl_wT <- read.csv( "data/toy_ceo_trans_1000EIN_fncl_wT.csv" )
 ceo_trans_1000EIN_fncl_wT <- get_podpm(ceo_trans_1000EIN_fncl_wT)
 
 #Let's plot these measures
@@ -766,7 +776,7 @@ The Glass Cliff Phenomenon hypothesizes that women are chosen for positions of p
 # the necessary variables 
 
 #site: https://github.com/Nonprofit-Open-Data-Collective/fiscal/tree/main/R
-ceo_trans_1000_fncl <- get_podpm(ceo_trans_1000_fncl)
+ceo_trans_1000_fncl <- get_podpm( ceo_trans_1000_fncl )
 
 
 
