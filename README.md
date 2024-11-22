@@ -12,6 +12,7 @@ Demo scripts for the data workshop at ARNOVA Conference 2024:
 ### Nonprofit Data Packages
 
 ```r
+install.packages( "devtools" )
 devtools::install_github( "Nonprofit-Open-Data-Collective/peopleparser" )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
 devtools::install_github( 'nonprofit-open-data-collective/fiscal')
@@ -25,7 +26,25 @@ If you are having problems downloading packages try:
 # options( download.file.method = "libcurl" )    # for all op systems
 ```
 
-### Demo Scripts
+- [NODC on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
+- [List of Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+
+### R Packages
+
+
+```r
+package.list <- 
+  c( "tidyverse",
+     "knitr", "pander",
+     "ggrepel", "RecordLinkage",
+     "data.table", "reshape2",)
+
+install.packages( package.list )
+```
+
+
+### Workflow Demo
+
 
 ```r
 library( dplyr )
@@ -54,9 +73,9 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 
 
-## NCCS data catalog: 
+### NCCS data catalog: 
 
-![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9)
+[ ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9) ](https://nccs.urban.org/nccs/datasets/)
 
 
 
@@ -64,8 +83,9 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 
 <style>
-  .btnStack {
-  background-color: steelblue;
+
+.btnStack {
+  background-color: #D4AF37;
   color: #000;
   text-decoration: none;
   display: inline-block;
