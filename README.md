@@ -1,16 +1,24 @@
-# The Evolving Nonprofit Sector Data Infrastructure
+<br>
+<br>
 
+# The Evolving Nonprofit Sector Data Infrastructure
 
 A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
+<a href="https://github.com/Nonprofit-Open-Data-Collective/arnova-2024/blob/main/NCCS-DATA-CATALOG.pdf" class="btnStack"><b>SLIDES</b></a>
 
----
+
+<br>
+<br>
 
 
-### Nonprofit Data Packages
+## Nonprofit Data Packages
+
+
+Packages used in the demo script: 
 
 ```r
-install.packages( "devtools" )
+# install.packages( "devtools" )
 devtools::install_github( "Nonprofit-Open-Data-Collective/peopleparser" )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
 devtools::install_github( 'nonprofit-open-data-collective/fiscal')
@@ -24,11 +32,14 @@ If you are having problems downloading packages try:
 # options( download.file.method = "libcurl" )    # for all op systems
 ```
 
-- [NODC on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
-- [List of Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
 
+[Nonprofit Open Data Collective on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
 
-### R Packages
+<br>
+<br>
+
+## R Packages
 
 We use the following packages in the demo script: 
 
@@ -43,8 +54,11 @@ package.list <-
 install.packages( package.list )
 ```
 
+<br>
+<br>
 
-### Workflow Demo
+
+## Workflow Demo
 
 <a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
 
@@ -75,21 +89,27 @@ bmf <- get_bmf()
 df <- merge( hd.2016, p1.2016, by="URL", all=TRUE )
 df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 ```
+<br>
+<br>
 
-### NCCS CORE Panel Downloads: 
+## NCCS CORE Panel 
 
 <a href="https://nccs-urban.shinyapps.io/sector-in-brief/" class="btnStack"><b>Sector in Brief Dashboard</b></a>
 
+<br>
+<br>
 
-
-### This repo: 
+## This repo: 
 
 ![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
 
 
+<br>
+<br>
+<br>
+<br>
 
-
-### NCCS data catalog: 
+## NCCS data catalog: 
 
 [ ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9) ](https://nccs.urban.org/nccs/datasets/)
 
@@ -101,7 +121,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <style>
 
 .btnStack {
-  background-color: #D4AF37;
+  background-color:  #fdbf11;
   color: #000;
   text-decoration: none;
   display: inline-block;
