@@ -110,7 +110,6 @@ The Nonprofit Sector in Brief Dashboard aggregates more than three decades of NC
 <br>
 <br>
 <br>
-<br>
 
 
 <style>
