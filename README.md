@@ -5,7 +5,7 @@
 
 A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
-<a href="https://github.com/Nonprofit-Open-Data-Collective/arnova-2024/blob/main/NCCS-DATA-CATALOG.pdf" class="btnStack"><b>SLIDES</b></a>
+<a href="https://github.com/Nonprofit-Open-Data-Collective/arnova-2024/blob/main/NCCS-DATA-CATALOG.pdf" target="_blank" class="btnStack"><b>SLIDES</b></a>
 
 
 <br>
@@ -60,7 +60,7 @@ install.packages( package.list )
 
 ## Workflow Demo
 
-<a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
+<a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" target="_blank" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
 
 1. Build tables using the irs990efile package.
 1. Standardize names of the leadership team present in Part VII (the compensation tables) using the peopleparser package.
@@ -94,7 +94,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 ## NCCS CORE Panel 
 
-<a href="https://nccs-urban.shinyapps.io/sector-in-brief/" class="btnStack"><b>Sector in Brief Dashboard</b></a>
+<a href="https://nccs-urban.shinyapps.io/sector-in-brief/" target="_blank" class="btnStack"><b>Sector in Brief Dashboard</b></a>
 
 <br>
 <br>
@@ -121,7 +121,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <style>
 
 .btnStack {
-  background-color:  #fdbf11;
+  background-color:  #B7C9E2;
   color: #000;
   text-decoration: none;
   display: inline-block;
