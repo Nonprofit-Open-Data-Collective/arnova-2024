@@ -91,6 +91,9 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 <a href="https://nccs-urban.shinyapps.io/sector-in-brief/" target="_blank" class="btnStack"><b>Sector in Brief Dashboard</b></a>
 
+The Nonprofit Sector in Brief Dashboard aggregates more than three decades of NCCS data to illuminate trends in the nonprofit sector. The dashboard currently provides data up to 2021 and will be continuously updated with the most recent available data. View data and trends by organization type, subsector, asset size, geography, and time period to see a snapshot of the nonprofit sector as seen through IRS data.
+
+
 <br>
 <br>
 
@@ -98,9 +101,16 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 [ ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9) ](https://nccs.urban.org/nccs/datasets/)
 
-The Nonprofit Sector in Brief Dashboard aggregates more than three decades of NCCS data to illuminate trends in the nonprofit sector. The dashboard currently provides data up to 2021 and will be continuously updated with the most recent available data. View data and trends by organization type, subsector, asset size, geography, and time period to see a snapshot of the nonprofit sector as seen through IRS data.
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <style>
