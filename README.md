@@ -30,12 +30,15 @@ If you are having problems downloading packages try:
 
 ### R Packages
 
+We use the following packages in the demo script: 
+
 ```r
 package.list <- 
   c( "tidyverse",
      "knitr", "pander",
      "ggrepel", "RecordLinkage",
-     "data.table", "reshape2",)
+     "data.table", "reshape2",
+     "utils" )
 
 install.packages( package.list )
 ```

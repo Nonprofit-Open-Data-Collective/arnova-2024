@@ -83,12 +83,24 @@ There is a growing library of nonprofit tools:
 We will be using the following packages for the demo: 
 
 ```{r, eval=F}
+# install.packages( "devtools" )
 devtools::install_github( 'Nonprofit-Open-Data-Collective/peopleparser' )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
 devtools::install_github( 'nonprofit-open-data-collective/fiscal')
 devtools::install_github( 'nonprofit-open-data-collective/irs990efile')
 ```
 
+
+```{r, eval=F}
+package.list <- 
+  c( "tidyverse",
+     "knitr", "pander",
+     "ggrepel", "RecordLinkage",
+     "data.table", "reshape2",
+     "utils")
+
+install.packages( package.list )
+```
 
 ```{r packages}
 library( tidyverse )
@@ -826,13 +838,8 @@ The glass cliff phenomenon suggest that financial precarious NPs (seen by a sign
 
 As a final understanding of the data, we look at the distribution of PODPM at T-1. We consider the two most relevant groups of MM and MF. We see that the distribution of financial variables tends to be extremely similar to both types of transitions, again failing to provide strong motivation for a glass cliff phenomenon.
 
-
-<br>
-<br>
 <br>
 <hr>
-<br>
-<br>
 <br>
 
 
