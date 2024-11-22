@@ -14,7 +14,6 @@ A demonstration of reproducible workflows with nonprofit data for the ARNOVA Con
 
 ## Nonprofit Data Packages
 
-[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
 
 Packages used in the demo script: 
 
@@ -33,7 +32,9 @@ If you are having problems downloading packages try:
 # options( download.file.method = "libcurl" )    # for all op systems
 ```
 
-<a href="https://github.com/Nonprofit-Open-Data-Collective" class="btnStack"><b>NODC on GitHub</b></a>
+[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+
+[Nonprofit Open Data Collective on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
 
 <br>
 <br>
