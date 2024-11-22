@@ -3,11 +3,14 @@
 
 A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
+<a href="https://github.com/Nonprofit-Open-Data-Collective/arnova-2024/blob/main/NCCS-DATA-CATALOG.pdf" class="btnStack"><b>SLIDES</b></a>
 
----
+
+<br>
+<br>
 
 
-### Nonprofit Data Packages
+## Nonprofit Data Packages
 
 [Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
 
@@ -33,7 +36,7 @@ If you are having problems downloading packages try:
 <br>
 <br>
 
-### R Packages
+## R Packages
 
 ```r
 package.list <- 
@@ -49,7 +52,7 @@ install.packages( package.list )
 <br>
 
 
-### Workflow Demo
+## Workflow Demo
 
 <a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
 
@@ -83,14 +86,14 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <br>
 <br>
 
-### NCCS CORE Panel Downloads: 
+## NCCS CORE Panel 
 
 <a href="https://nccs-urban.shinyapps.io/sector-in-brief/" class="btnStack"><b>Sector in Brief Dashboard</b></a>
 
 <br>
 <br>
 
-### This repo: 
+## This repo: 
 
 ![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
 
@@ -100,7 +103,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <br>
 <br>
 
-### NCCS data catalog: 
+## NCCS data catalog: 
 
 [ ![image](https://github.com/user-attachments/assets/d94c76e8-e0cf-4dad-a5db-81f71ca462e9) ](https://nccs.urban.org/nccs/datasets/)
 
