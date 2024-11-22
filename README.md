@@ -9,8 +9,12 @@ A demonstration of reproducible workflows with nonprofit data for the ARNOVA Con
 
 ### Nonprofit Data Packages
 
+[Some Useful Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+
+Packages used in the demo script: 
+
 ```r
-install.packages( "devtools" )
+# install.packages( "devtools" )
 devtools::install_github( "Nonprofit-Open-Data-Collective/peopleparser" )
 devtools::install_github( 'nonprofit-open-data-collective/titleclassifier' )
 devtools::install_github( 'nonprofit-open-data-collective/fiscal')
@@ -24,9 +28,10 @@ If you are having problems downloading packages try:
 # options( download.file.method = "libcurl" )    # for all op systems
 ```
 
-- [NODC on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
-- [List of Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
+<a href="https://github.com/Nonprofit-Open-Data-Collective" class="btnStack"><b>NODC on GitHub</b></a>
 
+<br>
+<br>
 
 ### R Packages
 
@@ -39,6 +44,9 @@ package.list <-
 
 install.packages( package.list )
 ```
+
+<br>
+<br>
 
 
 ### Workflow Demo
@@ -77,14 +85,18 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 
 <a href="https://nccs-urban.shinyapps.io/sector-in-brief/" class="btnStack"><b>Sector in Brief Dashboard</b></a>
 
-
+<br>
+<br>
 
 ### This repo: 
 
 ![image](https://github.com/user-attachments/assets/1065788a-abe6-47c1-90ee-4e9764f283e1)
 
 
-
+<br>
+<br>
+<br>
+<br>
 
 ### NCCS data catalog: 
 
@@ -98,7 +110,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <style>
 
 .btnStack {
-  background-color: #39f;
+  background-color: #D3D3D3;
   color: #000;
   text-decoration: none;
   display: inline-block;
