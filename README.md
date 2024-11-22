@@ -1,9 +1,7 @@
 # The Evolving Nonprofit Sector Data Infrastructure
 
 
-Demo scripts for the data workshop at ARNOVA Conference 2024:
-
-<a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
+A demonstration of reproducible workflows with nonprofit data for the ARNOVA Conference 2024.
 
 
 ---
@@ -29,8 +27,8 @@ If you are having problems downloading packages try:
 - [NODC on GitHub](https://github.com/Nonprofit-Open-Data-Collective)
 - [List of Nonprofit Packages](https://nonprofit-open-data-collective.github.io/tools/)
 
-### R Packages
 
+### R Packages
 
 ```r
 package.list <- 
@@ -45,12 +43,22 @@ install.packages( package.list )
 
 ### Workflow Demo
 
+<a href="https://nonprofit-open-data-collective.github.io/arnova-2024/glass-cliff-workflow.html" class="btnStack"><b>WORKFLOW EXAMPLE</b></a>
+
+1. Build tables using the irs990efile package.
+1. Standardize names of the leadership team present in Part VII (the compensation tables) using the peopleparser package.
+1. Standardize titles in Part VII using the titleclassifier package.
+1. Identify CEO transition years within the data.
+1. Build a financial dataset by combining the following 990 Parts: revenues, expenses, and assets.
+1. Generate common financial operating ratios using the fiscal package.
+1. Add NTEE codes and standardized address fields from the Unified BMF.
+1. Merge financial tables and compensation tables into a single table for the analysis.
+
 
 ```r
+# REPRODUCIBLE WORKFLOWS
 library( dplyr )
 library( data.table )
-library( peopleparser )
-library( titleclassifier )
 
 nodc <- "https://raw.githubusercontent.com/Nonprofit-Open-Data-Collective/"
 repo <- "arnova-2024/refs/heads/main/"
@@ -64,6 +72,11 @@ bmf <- get_bmf()
 df <- merge( hd.2016, p1.2016, by="URL", all=TRUE )
 df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 ```
+
+### NCCS CORE Panel Downloads: 
+
+<a href="https://nccs-urban.shinyapps.io/sector-in-brief/" class="btnStack"><b>Sector in Brief Dashboard</b></a>
+
 
 
 ### This repo: 
