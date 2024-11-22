@@ -115,7 +115,7 @@ df <- merge( df, bmf, by="EIN2", all.x=TRUE )
 <style>
 
 .btnStack {
-  background-color: #D3D3D3;
+  background-color: #7393B3;
   color: #000;
   text-decoration: none;
   display: inline-block;
